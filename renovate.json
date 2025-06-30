@@ -1,0 +1,32 @@
+{
+    "extends": ["config:best-practices"],
+    "labels": ["renovate"],
+    "schedule": [
+        "* 1-5 * * 0"
+    ],
+    "prHourlyLimit": 10,
+    "prConcurrentLimit": 10,
+    "packageRules": [
+        {
+            "groupName": "Update composer packages to non-major versions",
+            "matchPackageNames": ["*"],
+            "matchUpdateTypes": ["minor", "patch"],
+            "matchManagers": ["composer"]
+        },
+        {
+            "groupName": "Update local docker & docker-compose env dependencies",
+            "matchPackageNames": ["*"],
+            "matchManagers": ["docker-compose", "dockerfile"]
+        },
+        {
+            "groupName": "Update github actions",
+            "matchPackageNames": ["*"],
+            "matchManagers": ["github-actions"]
+        },
+        {
+            "matchPackageNames": ["php"],
+            "matchUpdateTypes": ["pinDigest", "digest"],
+            "enabled": false
+        }
+    ]
+}

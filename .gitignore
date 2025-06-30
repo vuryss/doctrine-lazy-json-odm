@@ -1,0 +1,8 @@
+/vendor
+/.idea
+/.php-cs-fixer.cache
+/.coverage
+
+.clinerules
+.devcontainer
+.vscode

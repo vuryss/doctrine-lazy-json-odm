@@ -1,0 +1,54 @@
+{
+    "name": "vuryss/doctrine-lazy-json-odm",
+    "description": "A high-performance Doctrine JSON ODM with lazy loading and dual serializer support",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Georgi Georgiev",
+            "email": "vuryss@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.4",
+        "doctrine/dbal": "^3.0|^4.0",
+        "doctrine/orm": "^2.15|^3.0",
+        "symfony/framework-bundle": "^6.4|^7.0",
+        "symfony/serializer": "^6.4|^7.0",
+        "symfony/dependency-injection": "^6.4|^7.0",
+        "symfony/config": "^6.4|^7.0",
+        "vuryss/serializer": "^1.0",
+        "symfony/property-access": "^7.3"
+    },
+    "require-dev": {
+        "pestphp/pest": "*",
+        "phpstan/phpstan": "*",
+        "captainhook/captainhook": "*",
+        "friendsofphp/php-cs-fixer": "*",
+        "captainhook/hook-installer": "*",
+        "ramsey/conventional-commits": "*",
+        "symfony/phpunit-bridge": "^6.4|^7.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "captainhook/hook-installer": true,
+            "pestphp/pest-plugin": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Vuryss\\DoctrineJsonOdm\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vuryss\\DoctrineJsonOdm\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "6.4.*"
+        }
+    }
+}
