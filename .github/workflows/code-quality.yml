@@ -1,0 +1,48 @@
+name: Code Quality Checks
+
+on:
+    push:
+        branches: [ master ]
+    pull_request:
+
+jobs:
+    code-quality:
+        runs-on: ubuntu-latest
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+            -   name: Set up php 8.4
+                uses: shivammathur/setup-php@9e72090525849c5e82e596468b86eb55e9cc5401 # 2.32.0
+                with:
+                    extensions: mbstring, xml, ctype, iconv, json
+                    tools: composer:v2
+                    php-version: 8.4
+
+            -   name: Validate composer.json
+                run: composer validate --strict
+
+            -   name: Install dependencies
+                run: composer install
+
+            -   name: Security check
+                run: composer audit
+
+            -   name: Check coding standards
+                run: vendor/bin/php-cs-fixer fix --diff --dry-run --using-cache=no
+
+            -   name: PHP Linting
+                run: find src tests -name '*.php' -exec php -l {} \; | (! grep -v "No syntax errors detected")
+
+            -   name: Static code analysis
+                run: vendor/bin/phpstan analyse --memory-limit=1G -v
+
+            -   name: Run Tests
+                run: vendor/bin/pest
+
+            -   name: Check workflow files
+                run: |
+                    bash <(curl https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash)
+                    ./actionlint -color
+                shell: bash
