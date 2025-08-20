@@ -2,3 +2,8 @@ parameters:
     level: 10
     paths:
         - src
+    ignoreErrors:
+        - path: src/DoctrineLazyJsonOdmBundle.php
+          identifier: method.nonObject
+        - path: src/DoctrineLazyJsonOdmBundle.php
+          identifier: method.notFound

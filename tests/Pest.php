@@ -11,8 +11,6 @@
 |
 */
 
-pest()->extend(Vuryss\DoctrineJsonOdm\Tests\TestCase::class)->in('Feature');
-
 // Use PHPUnit TestCase for unit tests
 pest()->extend(PHPUnit\Framework\TestCase::class)->in('Unit');
 
@@ -27,9 +25,9 @@ pest()->extend(PHPUnit\Framework\TestCase::class)->in('Unit');
 |
 */
 
-expect()->extend('toBeOne', function () {
-    return $this->toBe(1);
-});
+// expect()->extend('toBeOne', function () {
+//     return $this->toBe(1);
+// });
 
 /*
 |--------------------------------------------------------------------------
@@ -42,7 +40,7 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
-{
-    // ..
-}
+// function something()
+// {
+//     // ..
+// }

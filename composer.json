@@ -1,6 +1,6 @@
 {
     "name": "vuryss/doctrine-lazy-json-odm",
-    "description": "A high-performance Doctrine JSON ODM with lazy loading and dual serializer support",
+    "description": "A high-performance Doctrine JSON ODM with lazy loading using vuryss/serializer v2",
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
@@ -11,14 +11,13 @@
     ],
     "require": {
         "php": ">=8.4",
-        "doctrine/dbal": "^3.0|^4.0",
-        "doctrine/orm": "^2.15|^3.0",
-        "symfony/framework-bundle": "^6.4|^7.0",
-        "symfony/serializer": "^6.4|^7.0",
-        "symfony/dependency-injection": "^6.4|^7.0",
-        "symfony/config": "^6.4|^7.0",
-        "vuryss/serializer": "^1.0",
-        "symfony/property-access": "^7.3"
+        "doctrine/dbal": "^4.0",
+        "doctrine/orm": "^3.4",
+        "symfony/framework-bundle": "^7.0",
+        "symfony/dependency-injection": "^7.0",
+        "symfony/config": "^7.0",
+        "vuryss/serializer": "^2.0",
+        "halaxa/json-machine": "^1.2"
     },
     "require-dev": {
         "pestphp/pest": "*",
@@ -27,7 +26,7 @@
         "friendsofphp/php-cs-fixer": "*",
         "captainhook/hook-installer": "*",
         "ramsey/conventional-commits": "*",
-        "symfony/phpunit-bridge": "^6.4|^7.0"
+        "symfony/phpunit-bridge": "^7.0"
     },
     "config": {
         "allow-plugins": {
@@ -37,12 +36,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Vuryss\\DoctrineJsonOdm\\": "src/"
+            "Vuryss\\DoctrineLazyJsonOdm\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Vuryss\\DoctrineJsonOdm\\Tests\\": "tests/"
+            "Vuryss\\DoctrineLazyJsonOdm\\Tests\\": "tests/"
         }
     },
     "extra": {
