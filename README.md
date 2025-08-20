@@ -2,9 +2,7 @@
 
 A high-performance Symfony bundle that provides a Doctrine JSON ODM (Object Document Mapper) with advanced lazy loading capabilities. This bundle stores complex object structures as JSON in database fields while providing transparent lazy loading to improve performance.
 
-[![Tests](https://github.com/vuryss/doctrine-lazy-json-odm/actions/workflows/tests.yml/badge.svg)](https://github.com/vuryss/doctrine-lazy-json-odm/actions/workflows/tests.yml)
 [![PHP Version](https://img.shields.io/badge/php-%3E%3D8.4-blue)](https://www.php.net/)
-[![Symfony](https://img.shields.io/badge/symfony-%5E6.4%7C%5E7.0-green)](https://symfony.com/)
 
 ## Features
 
@@ -33,7 +31,7 @@ Register the bundle in your `config/bundles.php`:
 ```php
 return [
     // ...
-    \Vuryss\DoctrineJsonOdm\DoctrineLazyJsonOdmBundle::class => ['all' => true],
+    \Vuryss\DoctrineLazyJsonOdm\DoctrineLazyJsonOdmBundle::class => ['all' => true],
 ];
 ```
 
