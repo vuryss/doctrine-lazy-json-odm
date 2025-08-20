@@ -61,7 +61,7 @@ class DoctrineLazyJsonOdmBundle extends AbstractBundle
             /** @var LazyJsonDocumentType $type */
             $type = Type::getType(LazyJsonDocumentType::NAME);
 
-            $serializer = $this->container->get('doctrine_lazy_json_odm.serializer');
+            $serializer = $this->container->get(SerializerInterface::class);
 
             if (!$serializer instanceof SerializerInterface) {
                 throw new \LogicException('Serializer not configured');
