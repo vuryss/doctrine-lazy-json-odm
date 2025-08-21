@@ -12,12 +12,16 @@ namespace Vuryss\DoctrineLazyJsonOdm\Lazy;
  */
 readonly class LazyJsonArray implements \ArrayAccess, \Countable, \IteratorAggregate
 {
+    /** @var list<T> */
+    private array $items;
+
     /**
-     * @param array<int, T> $items
+     * @param array<T> $items
      */
     public function __construct(
-        private array $items,
+        array $items,
     ) {
+        $this->items = array_values($items);
     }
 
     public function offsetExists(mixed $offset): bool
@@ -88,7 +92,7 @@ readonly class LazyJsonArray implements \ArrayAccess, \Countable, \IteratorAggre
     }
 
     /**
-     * @return array<int, T>
+     * @return list<T>
      */
     public function getItems(): array
     {
