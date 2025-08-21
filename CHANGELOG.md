@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/vuryss/doctrine-lazy-json-odm/compare/v1.1.0...v1.2.0) (2025-08-21)
+
+
+### Features
+
+* Adding automatic reindex of elements inside lazy json array to avoid non-array JSON ([effb39a](https://github.com/vuryss/doctrine-lazy-json-odm/commit/effb39a13c03d305c64da610d888828084259b66))
+
 ## [1.1.0](https://github.com/vuryss/doctrine-lazy-json-odm/compare/v1.0.0...v1.1.0) (2025-08-21)
 
 
