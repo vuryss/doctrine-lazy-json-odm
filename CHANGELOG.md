@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/vuryss/doctrine-lazy-json-odm/compare/v1.0.0...v1.1.0) (2025-08-21)
+
+
+### Features
+
+* Adding update method to the lazy json array, allowing non-objects types ([b5e0d72](https://github.com/vuryss/doctrine-lazy-json-odm/commit/b5e0d721e5fc0abcb61254cb1ed8ced30c188600))
+
 ## [1.0.0](https://github.com/vuryss/doctrine-lazy-json-odm/compare/v0.9.0...v1.0.0) (2025-08-20)
 
 
