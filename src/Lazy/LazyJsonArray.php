@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Vuryss\DoctrineLazyJsonOdm\Lazy;
 
 /**
- * @template T of object
+ * @template T
  *
  * @implements \ArrayAccess<int, T>
  *  @implements \IteratorAggregate<int, T>
@@ -28,7 +28,7 @@ readonly class LazyJsonArray implements \ArrayAccess, \Countable, \IteratorAggre
     /**
      * @phpstan-return T
      */
-    public function offsetGet(mixed $offset): object
+    public function offsetGet(mixed $offset): mixed
     {
         return $this->items[$offset];
     }
@@ -58,9 +58,22 @@ readonly class LazyJsonArray implements \ArrayAccess, \Countable, \IteratorAggre
      *
      * @return LazyJsonArray<T>
      */
-    public function append(object $value): LazyJsonArray
+    public function append(mixed $value): LazyJsonArray
     {
         return new self([...$this->items, $value]);
+    }
+
+    /**
+     * @param T $value
+     *
+     * @return LazyJsonArray<T>
+     */
+    public function updateItem(int $index, mixed $value): LazyJsonArray
+    {
+        $items = $this->items;
+        $items[$index] = $value;
+
+        return new self($items);
     }
 
     /**
