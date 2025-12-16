@@ -5,5 +5,3 @@ parameters:
     ignoreErrors:
         - path: src/DoctrineLazyJsonOdmBundle.php
           identifier: method.nonObject
-        - path: src/DoctrineLazyJsonOdmBundle.php
-          identifier: method.notFound

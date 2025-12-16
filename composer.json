@@ -10,24 +10,24 @@
         }
     ],
     "require": {
-        "php": ">=8.4",
-        "doctrine/dbal": "^4.0",
-        "doctrine/orm": "^3.4",
-        "symfony/framework-bundle": "^7.0",
-        "symfony/dependency-injection": "^7.0",
-        "symfony/config": "^7.0",
-        "vuryss/serializer": "^2.0",
-        "halaxa/json-machine": "^1.2"
+        "php": "^8.4",
+        "doctrine/dbal": "^4.4.1",
+        "doctrine/orm": "^3.5.8",
+        "symfony/framework-bundle": "^7.4.1",
+        "symfony/dependency-injection": "^7.4.2",
+        "symfony/config": "^7.4.1",
+        "vuryss/serializer": "^3.0",
+        "halaxa/json-machine": "^1.2.6"
     },
     "require-dev": {
-        "pestphp/pest": "*",
-        "phpstan/phpstan": "*",
-        "captainhook/captainhook": "*",
-        "friendsofphp/php-cs-fixer": "*",
-        "captainhook/hook-installer": "*",
-        "ramsey/conventional-commits": "*",
-        "symfony/phpunit-bridge": "^7.0",
-        "mockery/mockery": "^1.6"
+        "pestphp/pest": "^4.2",
+        "phpstan/phpstan": "^2.1.33",
+        "captainhook/captainhook": "^5.27.4",
+        "friendsofphp/php-cs-fixer": "^3.92.1",
+        "captainhook/hook-installer": "^1.0.4",
+        "ramsey/conventional-commits": "^1.6",
+        "symfony/phpunit-bridge": "^7.4",
+        "mockery/mockery": "^1.6.12"
     },
     "config": {
         "allow-plugins": {
@@ -50,5 +50,9 @@
             "allow-contrib": false,
             "require": "6.4.*"
         }
+    },
+    "scripts": {
+        "test": "pest --no-coverage",
+        "coverage": "XDEBUG_MODE=coverage vendor/bin/pest --coverage-html coverage"
     }
 }
