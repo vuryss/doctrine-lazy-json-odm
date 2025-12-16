@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/vuryss/doctrine-lazy-json-odm/compare/v1.2.0...v2.0.0) (2025-12-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* Updating libraries, removing support for old versions ([#4](https://github.com/vuryss/doctrine-lazy-json-odm/issues/4))
+
+### Features
+
+* Updating libraries, removing support for old versions ([#4](https://github.com/vuryss/doctrine-lazy-json-odm/issues/4)) ([3a7571d](https://github.com/vuryss/doctrine-lazy-json-odm/commit/3a7571d9b5e21d2fe8741d4168d59df6d994b41b))
+
 ## [1.2.0](https://github.com/vuryss/doctrine-lazy-json-odm/compare/v1.1.0...v1.2.0) (2025-08-21)
 
 
