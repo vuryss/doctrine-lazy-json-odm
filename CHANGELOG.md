@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/vuryss/doctrine-lazy-json-odm/compare/v2.0.0...v3.0.0) (2026-03-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* Support for PHP 8.5 only, support and tests for Symfony 8.0, keeping support for 7.4 LTS, updating libs
+
+### Features
+
+* Support for PHP 8.5 only, support and tests for Symfony 8.0, keeping support for 7.4 LTS, updating libs ([82a7915](https://github.com/vuryss/doctrine-lazy-json-odm/commit/82a7915e40bc99180f0a41e5328aeb7d1ee6ff97))
+
 ## [2.0.0](https://github.com/vuryss/doctrine-lazy-json-odm/compare/v1.2.0...v2.0.0) (2025-12-16)
 
 
