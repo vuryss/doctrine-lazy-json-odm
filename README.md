@@ -2,21 +2,21 @@
 
 A high-performance Symfony bundle that provides a Doctrine JSON ODM (Object Document Mapper) with advanced lazy loading capabilities. This bundle stores complex object structures as JSON in database fields while providing transparent lazy loading to improve performance.
 
-[![PHP Version](https://img.shields.io/badge/php-%3E%3D8.4-blue)](https://www.php.net/)
+[![PHP Version](https://img.shields.io/badge/php-%3E%3D8.5-blue)](https://www.php.net/)
 
 ## Features
 
-- **🚀 Lazy Loading**: Uses PHP 8.4 lazy objects for deferred JSON deserialization
-- **⚡ Serializer**: Uses vuryss/serializer v2 for maximum performance
+- **🚀 Lazy Loading**: Uses PHP 8.5 lazy objects for deferred JSON deserialization
+- **⚡ Serializer**: Uses vuryss/serializer v4 for maximum performance
 - **🎯 Type Mapping**: Map class names to aliases for storage optimization
 - **📦 Collection Support**: Lazy-loaded arrays of objects with transparent usage
 - **📊 Performance Optimized**: Significant memory and CPU savings for unused data
 
 ## Requirements
 
-- PHP 8.4 or higher
-- Symfony 7.0+
-- Doctrine ORM 3.4+
+- PHP 8.5 or higher
+- Symfony 7.4 LTS or 8.x
+- Doctrine ORM 3.6+
 
 ## Installation
 
@@ -231,13 +231,31 @@ $orderCount = $orders->count(); // Loading all orders
 $firstOrder = $orders[0]; // Already loaded
 ```
 
-## Testing
+## Development
 
-Run the test suite:
+Start the local development container and run repository commands inside it:
 
 ```bash
-# Run all tests
-vendor/bin/pest
+docker compose up -d library
+docker compose exec -T library composer update --no-interaction --no-progress --prefer-dist
+```
+
+Run the default quality suite against the latest allowed dependencies:
+
+```bash
+docker compose exec -T library composer validate --strict
+docker compose exec -T library composer audit
+docker compose exec -T library vendor/bin/php-cs-fixer fix --diff --dry-run --using-cache=no
+docker compose exec -T library composer run-script lint:php
+docker compose exec -T library vendor/bin/phpstan analyse --memory-limit=1G -v
+docker compose exec -T library composer test
+```
+
+Validate both supported Symfony lines from the same composer.json:
+
+```bash
+docker compose exec -T library composer test:lowest
+docker compose exec -T library composer test:highest
 ```
 
 ## Performance Considerations
@@ -293,4 +311,4 @@ This bundle is released under the MIT License. See the [LICENSE](LICENSE) file f
 
 - Inspired by [dunglas/doctrine-json-odm](https://github.com/dunglas/doctrine-json-odm)
 - Uses [vuryss/serializer](https://github.com/vuryss/serializer) for high-performance serialization
-- Built with PHP 8.4 lazy objects feature
+- Built with PHP 8.5 lazy objects feature
